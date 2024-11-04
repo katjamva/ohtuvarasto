@@ -1,2 +1,0 @@
-Tekstiä.
-Git add -p testiin.
