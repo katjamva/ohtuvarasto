@@ -1,5 +1,7 @@
-#ignore these
 /*.tmp
 
 __pycache__/
 .pytest_cache/
+.coverage
+htmlcov
+
