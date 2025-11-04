@@ -53,6 +53,7 @@ def main():
     print(f"saatiin {saatiin}")
     print(f"Mehuvarasto: {mehua}")
 
+    print("Testi valmis.")
 
 if __name__ == "__main__":
     main()
