@@ -59,3 +59,24 @@ class TestVarasto(unittest.TestCase):
         self.varasto.lisaa_varastoon(15)
 
         self.assertAlmostEqual(self.varasto.saldo, 10)
+
+    def test_maara_ei_negatiivinen(self):
+        self.varasto.lisaa_varastoon(8)
+
+        saatu_maara = self.varasto.ota_varastosta(-3)
+
+        self.assertAlmostEqual(saatu_maara, 0)
+        self.assertAlmostEqual(self.varasto.saldo, 8)
+
+    def test_varastosta_ei_voi_ottaa_liikaa(self):
+        self.varasto.lisaa_varastoon(8)
+
+        saatu_maara = self.varasto.ota_varastosta(10)
+
+        self.assertAlmostEqual(saatu_maara, 8)
+        self.assertAlmostEqual(self.varasto.saldo, 0)
+
+    def test_str_palauttaa_oikean_merkkijonon(self):
+        self.varasto.lisaa_varastoon(6)
+
+        self.assertEqual(str(self.varasto), "saldo = 6, vielä tilaa 4")
